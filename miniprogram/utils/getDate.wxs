@@ -1,0 +1,25 @@
+module.exports.getFullDate = function(str) {
+  str = str.replace(".000","");
+  var time = getDate(str);
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  return month + "月" + date + "日";
+}
+
+module.exports.getDay = function(str) {
+  str = str.replace(".000","");
+  var time = getDate(str);
+  var days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+  return days[time.getDay()]
+}
+
+module.exports.getTime = function(str) {
+  str = str.replace(".000","");
+  var time = getDate(str);
+  var hour = time.getHours();
+  var minute = time.getMinutes();
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  return hour + ":" + minute;
+}

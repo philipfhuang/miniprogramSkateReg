@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#efefef",
+  "backgroundTextStyle": "dark"
+}

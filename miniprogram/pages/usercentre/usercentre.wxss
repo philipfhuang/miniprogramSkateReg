@@ -1,0 +1,92 @@
+/* pages/usercentre/usercentre.wxss */
+
+.notLoginBox {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.defaultIcon {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 50rpx auto;
+}
+
+.userinfo {
+  background-image: url("https://636c-cloud1-8go5u93y529b4a0b-1312059643.tcb.qcloud.la/images/icerink.jpg?sign=479613f9acce05e53a43f18d8edcaf5f&t=1654224718");
+  /* background-color: lightblue; */
+  background-size: cover;
+  width: 100%;
+  height: 300rpx;
+}
+
+.avatar {
+  position: relative;
+  border-radius: 50%;
+  height: 150rpx;
+  width: 150rpx;
+  top: 90rpx;
+  left: 50rpx;
+}
+
+.username {
+  position: relative;
+  top: 30rpx;
+  left: 90rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.contains {
+  position: relative;
+  height: 250rpx;
+  border: solid 2rpx #74a9fd;
+  border-radius: 20rpx;
+  margin: 15rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.contains .time {
+  background-image: linear-gradient(120deg, #74a9fd 0%, #9ce0ff 100%);
+  flex-basis: 25%;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 45rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contains .day, .hours {
+  font-size: 28rpx;
+}
+
+.contains .day {
+  margin-top: 20rpx;
+}
+
+.contains .info {
+  flex-basis: 75%;
+  font-size: 35rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 95rpx;
+}
+
+.unfinished::after {
+  border-radius: 20rpx;
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  content: "取消预约";
+  bottom: 30rpx;
+  right: 40rpx;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

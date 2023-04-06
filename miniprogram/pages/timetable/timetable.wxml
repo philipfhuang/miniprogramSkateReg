@@ -1,0 +1,18 @@
+<!--pages/timetable/timetable.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText"></view>
+  <view slot="content">课程表</view>
+</cu-custom>
+
+<block wx:if="{{!reservations.length}}">
+  <van-empty wx:if="{{networkError}}" image="network" description="网络错误" />
+  <van-empty wx:else image="search" description="没有人预约哦" />
+</block>
+<block wx:else>
+  <view wx:for="{{reservations}}" wx:key="index" class="block">
+    <view>{{getDate.getFullDate(item.startTime)}} {{getDate.getDay(item.startTime)}} {{getDate.getTime(item.startTime)}} - {{getDate.getTime(item.endTime)}}</view>
+    <view> {{rinks[item.rink]}} {{item.username}}</view>
+  </view>
+</block>
+
+<wxs src="../../utils/getDate.wxs" module="getDate"></wxs>

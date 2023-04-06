@@ -1,0 +1,41 @@
+<!--pages/book/book.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">预约</view>
+</cu-custom>
+
+<scroll-view scroll-x class="bg-white nav text-center" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{dayStr}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</scroll-view>
+
+<view wx:for="{{dayStr}}" wx:key="idx" wx:if="{{idx==TabCur}}" wx:for-index="idx">
+  <view>
+    <view class="title">
+      <text>{{dateStr[idx*2]}}</text>
+    </view>
+    <view class="selections">
+      <van-checkbox-group value="{{ result }}" bind:change="onChange" direction="horizontal">
+        <van-checkbox name="{{dateStr[idx*2]}} {{rinkInfo.time[idx].hours[index]}}" wx:for="{{rinkInfo.time[idx].hours}}" wx:key="index" disabled="{{disable[idx][index*2]}}">{{rinkInfo.time[idx].hours[index]}}</van-checkbox>
+      </van-checkbox-group>
+    </view>
+  </view>
+  <view>
+    <view class="title">
+      <text>{{dateStr[idx*2+1]}}</text>
+    </view>
+    <view class="selections">
+      <van-checkbox-group value="{{ result }}" bind:change="onChange" direction="horizontal">
+        <van-checkbox name="{{dateStr[idx*2+1]}} {{rinkInfo.time[idx].hours[index]}}" wx:for="{{rinkInfo.time[idx].hours}}" wx:key="index" disabled="{{disable[idx][index*2+1]}}">{{rinkInfo.time[idx].hours[index]}}</van-checkbox>
+      </van-checkbox-group>
+    </view>
+  </view>
+</view>
+
+<van-button round size="large" type="info" bindtap="confirm" color="radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)" class="confirmBtn">点击预约</van-button>
+
+<van-dialog show="{{showLogin}}" message="{{message}}" show-cancel-button bind:confirm="login" id="van-dialog" />
+
+<van-dialog show="{{show}}" title="确定预约？" message="{{message}}" show-cancel-button bind:confirm="bookConfirm" bind:cancel="bookCancel" id="van-dialog" />
+<van-toast id="van-toast" />

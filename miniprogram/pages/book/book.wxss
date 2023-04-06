@@ -1,0 +1,14 @@
+/* pages/book/book.wxss */
+.van-tabs__line {
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+}
+
+.title {
+  margin: 15rpx;
+  margin-left: 30rpx;
+  color: grey;
+}
+.selections {
+  margin: 30rpx;
+  margin-left: 50rpx;
+}

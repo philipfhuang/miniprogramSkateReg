@@ -1,0 +1,55 @@
+<!--pages/usercentre/usercentre.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">花滑约课</view>
+</cu-custom>
+
+<block wx:if="{{!isLogin}}">
+  <view class="notLoginBox">
+    <image class="defaultIcon" src="/images/user.png"></image>
+    <van-button round size="large" type="info" bindtap="login" color="radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)">点击登录</van-button>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="userinfo">
+    <image class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+    <text class="username">{{username}}</text>
+  </view>
+
+  <van-tabs active="unfinished" color="#48c6ef">
+    <van-tab title="未完成" name="unfinished">
+      <block wx:if="{{!unfinished.length}}">
+        <van-empty description="还没有记录哦" />
+      </block>
+      <block wx:else>
+        <view class="contains unfinished" wx:for="{{unfinished}}" wx:key="index" data-index="{{index}}" bindtap="cancel">
+          <view class="time">
+            <view class="date">{{getDate.getFullDate(item.startTime)}}</view>
+            <view class="day">{{getDate.getDay(item.startTime)}}</view>
+            <view class="hours">{{getDate.getTime(item.startTime)}} - {{getDate.getTime(item.endTime)}}</view>
+          </view>
+          <view class="info">{{rinks[item.rink]}}</view>
+        </view>
+      </block>
+    </van-tab>
+    <van-tab title="已完成" name="finished">
+      <block wx:if="{{!finished.length}}">
+        <van-empty description="还没有记录哦" />
+      </block>
+      <block wx:else>
+        <view class="contains" wx:for="{{finished}}" wx:key="index">
+          <view class="time">
+            <view class="date">{{getDate.getFullDate(item.startTime)}}</view>
+            <view class="day">{{getDate.getDay(item.startTime)}}</view>
+            <view class="hours">{{getDate.getTime(item.startTime)}} - {{getDate.getTime(item.endTime)}}</view>
+          </view>
+          <view class="info">{{rinks[item.rink]}}</view>
+        </view>
+      </block>
+    </van-tab>
+  </van-tabs>
+</block>
+
+<van-toast id="van-toast" />
+
+<wxs src="../../utils/getDate.wxs" module="getDate"></wxs>

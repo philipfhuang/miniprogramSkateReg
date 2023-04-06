@@ -1,0 +1,23 @@
+<!--pages/reservation/reservation.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">花滑约课</view>
+</cu-custom>
+
+<view class="arena" bindtap="goBook" data-rink="rocc">
+  <view class="info">
+    <text user-select="true" class="name">River Oaks Community Centre</text>
+    <text user-select="true" class="address">2400 Sixth Line, Oakville, ON L6H 3M8</text>
+  </view>
+</view>
+<view class="arena" bindtap="goBook" data-rink="smsc">
+  <view class="info">
+    <text user-select="true" class="name">Sixteen Mile Sports Complex</text>
+    <text user-select="true" class="address">3070 Neyagawa Blvd, Oakville, ON L6M 4L6</text>
+  </view>
+</view>
+<view class="arena" bindtap="goBook" data-rink="crc">
+  <view class="info">
+    <text user-select="true" class="name">Centennial Recreation Centre</text>
+    <text user-select="true" class="address">1967 Ellesmere Rd, Scarborough, ON M1H 2W5</text>
+  </view>
+</view>

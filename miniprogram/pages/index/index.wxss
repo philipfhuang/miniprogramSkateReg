@@ -1,0 +1,16 @@
+image {
+  width: 100%;
+}
+
+.reference {
+  position: absolute;
+  color: #B2B2B2;
+  bottom: 5rpx;
+  left: 50%;
+  margin-left: -139rpx;
+}
+
+.checkTimetable {
+  position: relative;
+  top: 50rpx;
+}

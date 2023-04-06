@@ -1,0 +1,7 @@
+/* pages/timetable/timetable.wxss */
+
+.block {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  font-size: 40rpx;
+}

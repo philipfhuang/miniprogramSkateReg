@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">花滑约课</view>
+</cu-custom>
+<image src="/images/iceskate.jpg" mode="aspectFit"></image>
+<!-- background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); -->
+<van-button round size="large" type="info" bindtap="goReservation" color="radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)">点击预约</van-button>
+
+<van-button class="checkTimetable" wx:if="{{isAdmin}}" round size="large" type="info" bindtap="goTimetable" color="radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%)">查看课程表</van-button>
+
+<text class="reference">图标来自 ©Flaticon.com</text>
